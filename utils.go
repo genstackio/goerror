@@ -1,6 +1,10 @@
 package goerror
 
-import "github.com/genstackio/goerror/errors"
+import (
+	"encoding/json"
+	"github.com/genstackio/goerror/errors"
+	"net/http"
+)
 
 //goland:noinspection GoUnusedExportedFunction
 func FormatJsonErrorResponse(err interface{}) errors.JsonErrorResponse {
@@ -19,4 +23,16 @@ func FormatGenericError(err interface{}) errors.JsonErrorResponse {
 		Code:       10000,
 		StatusCode: 500,
 	}
+}
+
+//goland:noinspection GoUnusedExportedFunction
+func WriteError(w http.ResponseWriter, err interface{}) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("X-Content-Type-Options", "nosniff")
+
+	response := FormatJsonErrorResponse(err)
+	w.WriteHeader(response.StatusCode)
+
+	erro, _ := json.Marshal(response)
+	_, _ = w.Write(erro)
 }
