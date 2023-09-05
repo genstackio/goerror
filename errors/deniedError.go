@@ -4,6 +4,10 @@ type DeniedError struct {
 	Reason string
 }
 
+func (err DeniedError) Error() string {
+	return "Operation denied (reason: " + err.Reason + ")"
+}
+
 func (err DeniedError) JsonResponse() JsonErrorResponse {
 	return JsonErrorResponse{
 		Status:     "error",
