@@ -5,7 +5,7 @@ type DeniedError struct {
 }
 
 func (err DeniedError) Error() string {
-	return "Operation denied (reason: " + err.Reason + ")"
+	return "operation denied (reason: " + err.Reason + ")"
 }
 
 func (err DeniedError) JsonResponse() JsonErrorResponse {
