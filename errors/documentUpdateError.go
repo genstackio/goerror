@@ -18,6 +18,11 @@ func (err DocumentUpdateError) GetData() map[string]interface{} {
 	m[err.Key] = err.Value
 	m["key"] = err.Key
 	m["value"] = err.Value
+	params := map[string]interface{}{}
+	for k, v := range err.Params {
+		params[k] = v
+	}
+	m["params"] = params
 	return m
 }
 

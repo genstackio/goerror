@@ -1,9 +1,5 @@
 package errors
 
-import (
-	"fmt"
-)
-
 type DocumentsFindError struct {
 	Type   string                 `json:"type,omitempty"`
 	Err    error                  `json:"err,omitempty"`
@@ -17,9 +13,11 @@ func (err DocumentsFindError) Error() string {
 func (err DocumentsFindError) GetData() map[string]interface{} {
 	m := map[string]interface{}{}
 	m["type"] = err.Type
+	params := map[string]interface{}{}
 	for k, v := range err.Params {
-		m[k] = fmt.Sprintf("%s", v)
+		params[k] = v
 	}
+	m["params"] = params
 	return m
 }
 

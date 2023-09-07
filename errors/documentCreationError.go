@@ -13,6 +13,11 @@ func (err DocumentCreationError) Error() string {
 func (err DocumentCreationError) GetData() map[string]interface{} {
 	m := map[string]interface{}{}
 	m["type"] = err.Type
+	params := map[string]interface{}{}
+	for k, v := range err.Params {
+		params[k] = v
+	}
+	m["params"] = params
 	return m
 }
 

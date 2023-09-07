@@ -1,7 +1,5 @@
 package errors
 
-import "fmt"
-
 type GenericError struct {
 	Params map[string]interface{} `json:"params,omitempty"`
 	Err    error                  `json:"err,omitempty"`
@@ -14,7 +12,7 @@ func (err GenericError) Error() string {
 func (err GenericError) GetData() map[string]interface{} {
 	m := map[string]interface{}{}
 	for k, v := range err.Params {
-		m[k] = fmt.Sprintf("%s", v)
+		m[k] = v
 	}
 	return m
 }
