@@ -1,7 +1,7 @@
 package errors
 
 type DeniedError struct {
-	Reason string
+	Reason string `json:"reason,omitempty"`
 }
 
 func (err DeniedError) Error() string {

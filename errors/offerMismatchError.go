@@ -1,8 +1,8 @@
 package errors
 
 type OfferMismatchError struct {
-	ExpectedOffer string
-	ActualOffer   string
+	ExpectedOffer string `json:"expectedOffer,omitempty"`
+	ActualOffer   string `json:"actualOffer,omitempty"`
 }
 
 func (err OfferMismatchError) Error() string {

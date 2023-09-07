@@ -1,8 +1,8 @@
 package errors
 
 type TenantMismatchError struct {
-	ExpectedTenant string
-	ActualTenant   string
+	ExpectedTenant string `json:"expectedTenant,omitempty"`
+	ActualTenant   string `json:"actualTenant,omitempty"`
 }
 
 func (err TenantMismatchError) Error() string {

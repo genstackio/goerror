@@ -1,8 +1,8 @@
 package errors
 
 type OwnerMismatchError struct {
-	ExpectedOwner string
-	ActualOwner   string
+	ExpectedOwner string `json:"expectedOwner,omitempty"`
+	ActualOwner   string `json:"actualOwner,omitempty"`
 }
 
 func (err OwnerMismatchError) Error() string {

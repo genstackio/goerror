@@ -1,7 +1,7 @@
 package errors
 
 type AccessDeniedError struct {
-	Err error
+	Err error `json:"err,omitempty"`
 }
 
 func (err AccessDeniedError) Error() string {

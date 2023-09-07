@@ -1,9 +1,9 @@
 package errors
 
 type ValidationError struct {
-	FieldNames  []string
-	FieldErrors map[string]interface{}
-	Err         error
+	FieldNames  []string               `json:"fieldNames,omitempty"`
+	FieldErrors map[string]interface{} `json:"fieldErrors,omitempty"`
+	Err         error                  `json:"err,omitempty"`
 }
 
 func (err ValidationError) Error() string {

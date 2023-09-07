@@ -1,7 +1,7 @@
 package errors
 
 type MarshallError struct {
-	Err error
+	Err error `json:"err,omitempty"`
 }
 
 func (err MarshallError) Error() string {

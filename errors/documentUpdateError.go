@@ -1,11 +1,11 @@
 package errors
 
 type DocumentUpdateError struct {
-	Key    string
-	Value  string
-	Params map[string]interface{}
-	Type   string
-	Err    error
+	Key    string                 `json:"key,omitempty"`
+	Value  string                 `json:"value,omitempty"`
+	Params map[string]interface{} `json:"params,omitempty"`
+	Type   string                 `json:"type,omitempty"`
+	Err    error                  `json:"err,omitempty"`
 }
 
 func (err DocumentUpdateError) Error() string {

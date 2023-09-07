@@ -1,8 +1,8 @@
 package errors
 
 type UnsupportedValueError struct {
-	Type  string
-	Value string
+	Type  string `json:"type,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 func (err UnsupportedValueError) Error() string {

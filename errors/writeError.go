@@ -1,7 +1,7 @@
 package errors
 
 type WriteError struct {
-	Err error
+	Err error `json:"err,omitempty"`
 }
 
 func (err WriteError) Error() string {

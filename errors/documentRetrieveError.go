@@ -1,10 +1,10 @@
 package errors
 
 type DocumentRetrieveError struct {
-	Type  string
-	Key   string
-	Value string
-	Err   error
+	Type  string `json:"type,omitempty"`
+	Key   string `json:"key,omitempty"`
+	Value string `json:"value,omitempty"`
+	Err   error  `json:"err,omitempty"`
 }
 
 func (err DocumentRetrieveError) Error() string {

@@ -1,9 +1,9 @@
 package errors
 
 type DocumentCreationError struct {
-	Params map[string]interface{}
-	Type   string
-	Err    error
+	Params map[string]interface{} `json:"params,omitempty"`
+	Type   string                 `json:"type,omitempty"`
+	Err    error                  `json:"err,omitempty"`
 }
 
 func (err DocumentCreationError) Error() string {

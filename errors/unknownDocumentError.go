@@ -1,10 +1,10 @@
 package errors
 
 type UnknownDocumentError struct {
-	Key   string
-	Value string
-	Type  string
-	Err   error
+	Key   string `json:"key,omitempty"`
+	Value string `json:"value,omitempty"`
+	Type  string `json:"type,omitempty"`
+	Err   error  `json:"err,omitempty"`
 }
 
 func (err UnknownDocumentError) Error() string {

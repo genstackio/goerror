@@ -1,7 +1,7 @@
 package errors
 
 type MissingRequirementError struct {
-	Name string
+	Name string `json:"name,omitempty"`
 }
 
 func (err MissingRequirementError) Error() string {

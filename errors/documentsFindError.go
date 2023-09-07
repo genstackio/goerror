@@ -5,9 +5,9 @@ import (
 )
 
 type DocumentsFindError struct {
-	Type   string
-	Err    error
-	Params map[string]interface{}
+	Type   string                 `json:"type,omitempty"`
+	Err    error                  `json:"err,omitempty"`
+	Params map[string]interface{} `json:"params,omitempty"`
 }
 
 func (err DocumentsFindError) Error() string {

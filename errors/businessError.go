@@ -3,9 +3,9 @@ package errors
 import "strconv"
 
 type BusinessError struct {
-	Code    int
-	Message string
-	Value   string
+	Code    int    `json:"code,omitempty"`
+	Message string `json:"message,omitempty"`
+	Value   string `json:"value,omitempty"`
 }
 
 func (err BusinessError) Error() string {

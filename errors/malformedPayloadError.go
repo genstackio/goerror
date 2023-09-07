@@ -1,7 +1,7 @@
 package errors
 
 type MalformedPayloadError struct {
-	Err error
+	Err error `json:"err,omitempty"`
 }
 
 func (err MalformedPayloadError) Error() string {

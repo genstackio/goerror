@@ -3,8 +3,8 @@ package errors
 import "fmt"
 
 type GenericError struct {
-	Params map[string]interface{}
-	Err    error
+	Params map[string]interface{} `json:"params,omitempty"`
+	Err    error                  `json:"err,omitempty"`
 }
 
 func (err GenericError) Error() string {
