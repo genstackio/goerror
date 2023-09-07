@@ -6,6 +6,6 @@ type JsonErrorResponse struct {
 	Message    string                 `json:"message"`
 	Detail     string                 `json:"detail,omitempty"`
 	Code       int                    `json:"code"`
-	StatusCode int                    `json:"-"`
+	StatusCode int                    `json:"statusCode"`
 	Data       map[string]interface{} `json:"data,omitempty"`
 }
