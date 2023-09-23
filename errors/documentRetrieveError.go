@@ -26,7 +26,7 @@ func (err DocumentRetrieveError) JsonResponse() JsonErrorResponse {
 		ErrorType:  "document_retrieve",
 		Message:    err.Error(),
 		Detail:     err.Err.Error(),
-		Code:       12800,
+		Code:       12801,
 		StatusCode: 500,
 		Data:       err.GetData(),
 	}
