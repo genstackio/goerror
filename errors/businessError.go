@@ -21,11 +21,15 @@ func (err BusinessError) GetData() map[string]interface{} {
 }
 
 func (err BusinessError) JsonResponse() JsonErrorResponse {
+	code := err.Code
+	if 0 == code {
+		code = 12997
+	}
 	return JsonErrorResponse{
 		Status:     "error",
 		ErrorType:  "business",
 		Message:    err.Error(),
-		Code:       12997,
+		Code:       code,
 		StatusCode: 403,
 		Data:       err.GetData(),
 	}
